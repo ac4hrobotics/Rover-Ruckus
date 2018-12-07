@@ -136,13 +136,14 @@ telemetry.update();
         // liftInches positive goes up,  Negative goes down
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
-        encoderDrive(MAST_SPEED,  0,  0, -50, 20,2 );  // S1: Lower mast 1 Inches with 5 Sec timeout
-        encoderDrive(LIFT_SPEED,   0,  0, 0, 0,10);    // S2: Raise lift 5 Inches with 10 Sec timeout
+        encoderDrive(MAST_SPEED,  0,  0, 0, 20,2 );  // S1: Lower mast 1 Inches with 5 Sec timeout
+        encoderDrive(LIFT_SPEED,   0,  0, 0, -50,10);    // S2: Raise lift 5 Inches with 10 Sec timeout
         encoderDrive(DRIVE_SPEED,  48,  48, 0, 0,8);    // S3: Forward 2 Inches with 4 Sec timeout
-        encoderDrive(TURN_SPEED,   24,  -24, 0, 0,8);    // S3: Turn 24 Inches with 4 Sec timeout
-      //  encoderDrive(MAST_SPEED,   0,  0, 0, 0,4);    // S3: Reverse 24 Inches with 4 Sec timeout
-
         robot.Latch.setPosition(.45);            // S4: Stop and close the claw.
+        encoderDrive(TURN_SPEED,   24,  -24, 0, 0,8);    // S5: Turn 24 Inches with 4 Sec timeout
+      //  encoderDrive(MAST_SPEED,   0,  0, 0, 0,4);    // S6: Reverse 24 Inches with 4 Sec timeout
+
+        
         // robot.leftClaw.setPosition(1.0);            // S4: Stop and close the claw.
         //robot.rightClaw.setPosition(0.0);
         sleep(1000);     // pause for servos to move
